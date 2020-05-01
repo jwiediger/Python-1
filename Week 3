@@ -1,0 +1,46 @@
+# display main menu
+def displayMenu():
+    print("Welcome to the Team Manager")
+    print("===========Main Menu===========")
+    print(" 1. Display Team Roster")
+    print(" 2. Add Member")
+    print(" 3. Remove Member")
+    print(" 4. Edit Member")
+    print(" 9. Exit Program")
+    print("Enter a Number")
+    return
+# selection(1,2,3,4,9)
+def selection():
+    selection = int(input("selection"))
+    return selection
+
+def addPlayer(player):
+    newName = input("Enter name: ")
+
+    newphone = int(input("Players phone number "))
+
+    newjersey = input("Jersey number ")
+
+
+def main():
+    members = []
+    while True:
+        displayMenu()
+        choice = selection()
+        if choice == 1:
+            add
+        elif choice == 2:
+            addmember(members)
+        elif choice == 3:
+            removemember(members)
+        elif choice == 4:
+            editmember(members)
+        elif choice == 9:
+            print("Good Bye!!")
+            exit(1)
+        else:
+            print("Entered wrong number")
+
+
+main()
+name = input("")
