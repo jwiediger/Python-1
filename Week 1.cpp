@@ -1,27 +1,49 @@
-
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-	cout << " Enter a number and see the results:" <<endl;
-	
-	int num1;
-	cout << "num1:   ";
-	int num2;
-	cout << "num2:   ";
-	int num3;
-	cout << "num3:   ";
-	
-	cin >> num1 >> num2 >> num3;
-	
-	cout << "total=" << num1 + num2 + num3 << endl;
-	
-	cout << "average=" << (num1 + num2 + num3) /3 <<endl;
-
-	
-	system("pause");
-	return 0;
-}
-
+print("ABC INC, Gross Pay Calculator")
+print("Employees_name_or 0 to quit")
+Name_ = input("")
+if Name_ == str("0"):
+    print("Goodbye")
+    exit(1)
+print("Hours Worked")
+Hours_worked_ = float(input(""))
+print("Employees Pay Rate = $10.00 Hour")
+Pay_Rate_ = 10
+print("Enter Employees Name or 0 to quit")
+name = input("")
+if name == str("0"):
+    print("Goodbye")
+    exit(1)
+Gross_Pay_ = input(Hours_worked_ * Pay_Rate_)
+print("Total")
+print(Gross_Pay_ * Pay_Rate_)
+print("Enter Employee's name or 0 to quit")
+name = input("")
+if name == str("0"):
+    print("Goodbye")
+    exit(1)
+print("Hours worked")
+Hours_worked_ = float(input(""))
+print("Employees Pay Rate = $10.00 per hour")
+Pay_Rate_ = 10
+print("Enter Employees Name")
+input("")
+if input == str("0"):
+    print("Goodbye")
+    exit(1)
+print("Gross Pay")
+Gross_Pay_ = input(Hours_worked_ * Pay_Rate_)
+print(Gross_Pay_ * Pay_Rate_)
+Overtime_Hours_ = int(Hours_worked_ - 40)
+print("Overtime")
+print(Overtime_Hours_)
+print("Overtime Pay")
+Overtime_Pay_ = input(Overtime_Hours_ * Pay_Rate_ * 1.5)
+print(Overtime_Pay_)
+Total_ = input(Hours_worked_ * Pay_Rate_ + 75)
+print("Total")
+print(Total_)
+print("Enter Employees Name or 0 to quit")
+name = input("")
+if name == str("0"):
+    print("Goodbye")
+    exit(1)
