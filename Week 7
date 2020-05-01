@@ -1,0 +1,71 @@
+import random
+import time
+def main():
+    print(" GAME TIME")
+    print("by Jason W")
+    Game_Time = 'Lets Go'
+    print("Guess the letters to get the word.")
+    for line in Game_Time:
+        print(line, sep='/n')
+
+
+name = input("What is your name?")
+print(" Hello," + name, "ready to play?")
+
+# wait for 3 seconds
+
+time.sleep(1)
+print("Hint")
+print("Football team in Colorado, Ann Arbor, New York basketball")
+
+play_again = True
+
+while play_again:
+    words = ["broncos", "michigan", "knicks"]
+    word = random.choice(words).lower()
+    play_guess = None
+    guessed_letters = []
+    word_guessed = []
+    for letter in word:
+        word_guessed.append("-")
+    joined_word = None
+
+    START = "_______________Sorry"
+    print(START[0])
+    attempts = len(START) - 1
+    while attempts != 0 and "-" in word_guessed:
+        print(("/nYou have {} attempts left").format(attempts))
+        joined_word = "".join(word_guessed)
+        print(joined_word)
+        try:
+            player_guess = str(input("/n Please Select a letter" + "/n> ")).lower()
+        except:
+            print("Sorry not a letter used, Try Again")
+            continue
+        else:
+            if not player_guess.isalpha():
+                print("Sorry not a letter used, Try Again")
+                continue
+            elif len (player_guess) > 1:
+                print("Too Many Letters, Try Again")
+                continue
+            else:
+                pass
+            guessed_letters.append(player_guess)
+        for letter in range(len(word)):
+            if player_guess == word[letter]:
+                word_guessed[letter] = player_guess
+            if player_guess not in word:
+                attempts -= 1
+                print(START[(len(START) - 1) - attempts])
+        if "-" not in word_guessed:
+            print(("/nCongrat's! The word was[].").format(word))
+        else:
+            print("/nSorry this game might be too hard for you")
+        print("/nWould you like to try again?")
+
+        response = input(">").lower()
+        if response not in ("yes", "y"):
+            play_again = False
+if __name__ == "__main__":
+    main()
