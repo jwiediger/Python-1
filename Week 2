@@ -1,0 +1,33 @@
+print("Welcome to the BMI Index Calculator.")
+print("Enter Students Name or press 0 to quit")
+
+Name_ = input("")
+if Name_ == str("0"):
+    print("That was not a name.")
+    print("Goodbye")
+    exit(1)
+print("Please Enter Weight")
+Weight_ = float(input(""))
+print("Please Enter Height")
+Height_ = float(input(""))
+print("BMI")
+BMI_ = input(Weight_ * 703 / (Height_ * Height_))
+
+
+print("Please Enter Name or press 0 to quit")
+input("Name")
+if Name_ == str("0"):
+        print("Goodbye")
+        exit(1)
+elif "Name_":
+    print("Please Enter students Height in inches")
+Height_ = float(input(""))
+print("Please Enter Weight")
+Weight_ = float(input(""))
+print("BMI")
+BMI_ = input(Weight_ * 703 / (Height_ * Height_))
+print("Please Enter Name or press 0 to quit")
+input("Name")
+if Name_ == str("0"):
+            print("Goodbye")
+            exit(1)
