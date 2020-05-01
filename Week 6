@@ -1,0 +1,130 @@
+# display main menu
+def displayMenu():
+    print("Welcome to the Team Manager")
+    print("===========Main Menu===========")
+    print(" 1. Display Team Roster")
+    print(" 2. Add Player")
+    print(" 3. Remove Member")
+    print(" 4. Edit Player")
+    print(" 5. Save Data")
+    print(" 6. Load Data")
+    print(" 9. Exit Program")
+    print("Enter a Number")
+    return
+
+
+# selection(1,2,3,4,5,6,9)
+def selection():
+    selection = int(input("selection"))
+    return selection
+
+# program functions and import data
+class memberclass:
+    name = ""
+    phone = ""
+    jersey = ""
+    def __init__(self, name, phone, jersey):
+        self.name = name
+        self.phone = phone
+        self.jersey = jersey
+
+
+def displayTeamRoster(members):
+    if len(members) == 0:
+        print("No members on roster:")
+    else:
+        for x in members.keys():
+            members[x].displayTeamRoster()
+
+
+
+# program functions and import data
+def addPlayer(members):
+    newName = input("Enter name: ")
+    newphone = int(input("Players phone number "))
+    addjersey = int(input("Jersey number "))
+
+
+def removeMember(members):
+    removeName = input("enter members name to be removed: ")
+    # check first to see if the given name exists in the list.
+    if removeName in members:
+        # use the del keyword to delete the entry at the given name.
+        del members[removeName]
+    else:
+        print("Member not found in list.")
+    # Return updated list.
+    return members
+
+
+def editMember(members):
+    # get the name of the member to be changed.
+    oldName = input("Enter the name of the Pet you want to edit: ")
+    # see if name exists in list, if so, get index of given name, accept new
+    # name, and replace the name in the list with the new name.
+    # Return updated list.
+    if oldName in members:
+        newName = input("Enter the members new name: ")
+        newphone = int(input("Pet's new phone: "))
+        newjersey = input("Pet's new jersey: ")
+        members[oldName] = members(newName, newphone, newjersey)
+    else:
+        print("No such member in memory")
+        # Return updated list.
+        return members
+
+
+def saveData(members):
+    filename = input("Save file as", )
+    print("Saving Data...")
+    outFile = open(filename, "wt")
+    for x in members:
+        name = members.getname()
+        phone = members.getphone()
+        jersey = members.getjersey()
+        outFile.write(name + "," + phone + "," + jersey + ",""\n")
+    print("Data saved.")
+    outFile.close()
+
+
+def loadData():
+    members = {}
+    filename = input("Filename to load: ")
+    inFile = open(filename, "rt")
+    print("Loading data...")
+    while True:
+        # read in a line of text from the text file
+        inLine = inFile.readline()
+        # if line is empty, stop loading data.
+        if not inLine:
+            break
+        inLine = inLine[:-1]
+        name, phone, jersey = inLine.split(",")
+        print("Data Loaded Successfully.")
+
+
+def main():
+    members = []
+    while True:
+        displayMenu()
+        choice = selection()
+        if choice == 1:
+            displayTeamRoster(members)
+        elif choice == 2:
+            addPlayer(members)
+        elif choice == 3:
+            members = removeMember(members)
+        elif choice == 4:
+            members = editMember(members)
+        elif choice == 5:
+            saveData(members)
+        elif choice == 6:
+            loadData()
+        elif choice == 9:
+            print("Good Bye!!")
+            exit(1)
+        else:
+            print("Entered wrong number")
+
+
+main()
